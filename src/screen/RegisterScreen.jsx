@@ -1,5 +1,6 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import TextInputCustom from '../components/TextInputCustom';
 
 const RegisterScreen = ({ navigation }) => {
   return (
@@ -15,28 +16,14 @@ const RegisterScreen = ({ navigation }) => {
       <Text style={styles.subtitle}>Crear nueva cuenta</Text>
 
       <View style={{ marginTop: 40, width: '100%' }}>
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='Nombre' />
-        </View>
-
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='Email' />
-        </View>
-
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='País' />
-        </View>
-
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='Contraseña' />
-        </View>
-
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='Confirmar contraseña' />
-        </View>
+        <TextInputCustom placeholder={'Nombre'} />
+        <TextInputCustom placeholder={'Email'} />
+        <TextInputCustom placeholder={'País'} />
+        <TextInputCustom placeholder={'Contraseña'} />
+        <TextInputCustom placeholder={'Confirmar contraseña'} />
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TabNavigation')}>
         <Text style={styles.buttonText}>Crear cuenta</Text>
       </TouchableOpacity>
 

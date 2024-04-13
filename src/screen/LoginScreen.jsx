@@ -1,5 +1,6 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import TextInputCustom from '../components/TextInputCustom';
 
 const LoginScreen = ({ navigation }) => {
   return (
@@ -18,15 +19,10 @@ const LoginScreen = ({ navigation }) => {
       </View>
 
       <View style={{ marginTop: 40, width: '100%' }}>
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='Email' />
-        </View>
-
-        <View style={styles.textInputContainer}>
-          <TextInput placeholder='Contraseña' />
-        </View>
+        <TextInputCustom placeholder={'Email'} />
+        <TextInputCustom placeholder={'Contraseña'} />
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TabNavigation')}>
         <Text style={styles.buttonText}>Iniciar sesión</Text>
       </TouchableOpacity>
 
@@ -57,24 +53,6 @@ const styles = StyleSheet.create({
   subtitle: {
     color: 'gray',
     textAlign: 'center',
-  },
-  textInputContainer: {
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 7,
-    padding: 14,
-    width: '100%',
-    marginVertical: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-
-    elevation: 7,
-    backgroundColor: 'white',
   },
   button: {
     backgroundColor: '#FF3352',
