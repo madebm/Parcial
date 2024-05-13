@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 export const StackNavigation = () => {
   return (
     <>
-      <StatusBar backgroundColor={'#FF3352'} />
+      <StatusBar backgroundColor={'white'} barStyle='dark-content' />
       <Stack.Navigator>
         <Stack.Screen name='LoginScreen' component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name='RegisterScreen' component={RegisterScreen} options={{ headerShown: false }} />
