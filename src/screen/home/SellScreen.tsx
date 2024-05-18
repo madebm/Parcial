@@ -1,40 +1,42 @@
-import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import CardAccordion from '../components/CardAccordion';
+import React from "react";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import CardAccordion from "../../components/CardAccordion";
 
 const SellScreen = () => {
   const stock = [
     {
-      abreviation: 'BTC',
+      abreviation: "BTC",
       price: 20000,
-      title: 'Bitcoin',
+      title: "Bitcoin",
       variation: -7.5,
       image:
-        'https://static.vecteezy.com/system/resources/previews/008/505/801/original/bitcoin-logo-color-illustration-png.png',
+        "https://static.vecteezy.com/system/resources/previews/008/505/801/original/bitcoin-logo-color-illustration-png.png",
     },
     {
-      abreviation: 'BNB',
+      abreviation: "BNB",
       price: 1000,
-      title: 'BNB',
+      title: "BNB",
       variation: 10.9,
-      image: 'https://cryptologos.cc/logos/bnb-bnb-logo.png',
+      image: "https://cryptologos.cc/logos/bnb-bnb-logo.png",
     },
     {
-      abreviation: 'Ethereum',
+      abreviation: "Ethereum",
       price: 1765.2,
-      title: 'ETH',
+      title: "ETH",
       variation: -1.57,
       image:
-        'https://static.vecteezy.com/system/resources/previews/002/463/890/original/ethereum-logo-color-crypto-currency-symbol-isolated-vector.jpg',
+        "https://static.vecteezy.com/system/resources/previews/002/463/890/original/ethereum-logo-color-crypto-currency-symbol-isolated-vector.jpg",
     },
   ];
 
   return (
     <FlatList
-      style={{ backgroundColor: 'white' }}
+      style={{ backgroundColor: "white" }}
       contentContainerStyle={{ paddingHorizontal: 20, paddingVertical: 15 }}
       data={stock}
-      ListHeaderComponent={() => <Text style={{ fontWeight: 'bold', fontSize: 17 }}>Vender</Text>}
+      ListHeaderComponent={() => (
+        <Text style={{ fontWeight: "bold", fontSize: 17 }}>Vender</Text>
+      )}
       renderItem={({ item, index }) => (
         <View style={{ marginVertical: 15 }} key={index}>
           <CardAccordion

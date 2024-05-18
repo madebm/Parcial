@@ -1,10 +1,11 @@
-import React from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import React from "react";
+import { StyleSheet, TextInput, TextInputProps, View } from "react-native";
 
-const TextInputCustom = ({ placeholder }) => {
+interface Props extends TextInputProps {}
+const TextInputCustom = (props: Props) => {
   return (
     <View style={styles.textInputContainer}>
-      <TextInput placeholder={placeholder} />
+      <TextInput {...props} />
     </View>
   );
 };
@@ -14,12 +15,12 @@ export default TextInputCustom;
 const styles = StyleSheet.create({
   textInputContainer: {
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderRadius: 7,
     padding: 14,
-    width: '100%',
+    width: "100%",
     marginVertical: 10,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 3,
@@ -28,6 +29,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
 
     elevation: 7,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
 });
