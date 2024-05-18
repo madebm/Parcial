@@ -19,11 +19,13 @@ const ProfileScreen = () => {
       icon: "person",
       title: "Mi cuenta",
       subtitle: "Realiza cambios en tu cuenta",
+      action: () => {},
     },
     {
       icon: "person",
       title: "Cerrar sesión",
       subtitle: "Sal de tu cuenta",
+      action: signOut,
     },
   ];
 
@@ -65,7 +67,7 @@ const ProfileScreen = () => {
             style={{ flexDirection: "row" }}
             key={index}
             activeOpacity={0.7}
-            onPress={signOut}
+            onPress={item.action}
           >
             <View
               style={{
