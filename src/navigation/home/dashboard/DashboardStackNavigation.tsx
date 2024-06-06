@@ -1,9 +1,8 @@
-import { createStackNavigator } from "@react-navigation/stack";
-import { StatusBar } from "react-native";
-import BuyScreen from "../../../screen/home/BuyScreen";
-import HomeScreen from "../../../screen/home/HomeScreen";
-import SellScreen from "../../../screen/home/SellScreen";
-import Header from "../../../components/Header";
+import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'react-native';
+import SellScreen from '../../../screen/home/Sell/SellScreen';
+import BuyScreen from '../../../screen/home/buy/BuyScreen';
+import HomeScreen from '../../../screen/home/home/HomeScreen';
 
 export type DashboardRootStackParams = {
   HomeScreen: undefined;
@@ -16,27 +15,23 @@ const Stack = createStackNavigator<DashboardRootStackParams>();
 export const DashboardStackNavigation = () => {
   return (
     <>
-      <StatusBar backgroundColor={"white"} barStyle="dark-content" />
+      <StatusBar backgroundColor={'white'} barStyle='dark-content' />
       <Stack.Navigator>
+        <Stack.Screen name='HomeScreen' component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="BuyScreen"
+          name='BuyScreen'
           component={BuyScreen}
           options={{
             headerShown: true,
-            title: "",
+            title: '',
           }}
         />
         <Stack.Screen
-          name="SellScreen"
+          name='SellScreen'
           component={SellScreen}
           options={{
             headerShown: true,
-            title: "",
+            title: '',
           }}
         />
       </Stack.Navigator>

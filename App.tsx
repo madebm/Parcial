@@ -1,8 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
-import "react-native-gesture-handler";
-import ContainerStackNavigation from "./src/navigation/ContainerStackNavigation";
-import { AuthProvider } from "./src/context/authContext/AuthContext";
-import { Text } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
+import { AuthProvider } from './src/context/authContext/AuthContext';
+import ContainerStackNavigation from './src/navigation/ContainerStackNavigation';
 
 export default function App() {
   return (

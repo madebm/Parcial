@@ -1,7 +1,10 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import CustomTheme from '../theme/CustomTheme';
 
-const Card = ({ title, abreviation, price, variation, image }) => {
+const { colors } = CustomTheme;
+
+const Card = ({ title, abreviation, price, variation, image, count }) => {
   return (
     <View style={styles.container}>
       <View style={{ width: '20%', justifyContent: 'center' }}>
@@ -16,6 +19,9 @@ const Card = ({ title, abreviation, price, variation, image }) => {
         <View>
           <Text style={{ fontWeight: 'bold', fontSize: 15 }}>{title}</Text>
           <Text style={{ marginTop: 5 }}>{abreviation}</Text>
+        </View>
+        <View style={{ justifyContent: 'center' }}>
+          <Text>x{count}</Text>
         </View>
         <View style={{ width: '20%' }}>
           <Text style={{ fontWeight: 'bold', color: variation >= 0 ? 'green' : 'red' }}>{variation}%</Text>
